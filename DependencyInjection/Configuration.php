@@ -24,8 +24,8 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $tb = new TreeBuilder();
-        $tb->root('joipolloi_jsonvalidation', 'array')
+        $tb = new TreeBuilder('joipolloi_jsonvalidation', 'array');
+        $tb->getRootNode()
             ->children()
                 ->booleanNode('enable_problemjson_listener')->defaultFalse()->end()
         ;

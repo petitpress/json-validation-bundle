@@ -11,7 +11,7 @@
 
 namespace JoiPolloi\Bundle\JsonValidationBundle\Annotation;
 
-use Symfony\Component\HttpKernel\Event\FilterControllerEvent,
+use Symfony\Component\HttpKernel\Event\ControllerEvent,
     Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use JoiPolloi\Bundle\JsonValidationBundle\JsonValidator\JsonValidator,
     JoiPolloi\Bundle\JsonValidationBundle\Exception\JsonValidationException;
@@ -36,9 +36,9 @@ class ValidateJsonListener
     }
 
     /**
-     * @param FilterControllerEvent $event
+     * @param ControllerEvent $event
      */
-    public function onKernelController(FilterControllerEvent $event)
+    public function onKernelController(ControllerEvent $event)
     {
         $request = $event->getRequest();
 

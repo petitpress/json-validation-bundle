@@ -31,7 +31,7 @@ class JsonValidationExceptionListener
      */
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
-        $exception = $event->getException();
+        $exception = $event->getThrowable();
 
         if (!($exception instanceof JsonValidationException)) {
             return;
